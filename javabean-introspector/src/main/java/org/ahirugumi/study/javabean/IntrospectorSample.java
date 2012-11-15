@@ -1,11 +1,12 @@
 package org.ahirugumi.study.javabean;
 
+import java.io.Serializable;
+
 /**
- * IntrospectorSample
- * JavaBeanを想定
+ * IntrospectorSample JavaBeanを想定
  */
-public class IntrospectorSample 
-{
+public class IntrospectorSample implements Serializable {
+
 	private String foo;
 	private String bar;
 	private int baz;
@@ -42,5 +43,4 @@ public class IntrospectorSample
 	public void setPiyo(Object piyo) {
 		this.piyo = piyo;
 	}
-
 }
