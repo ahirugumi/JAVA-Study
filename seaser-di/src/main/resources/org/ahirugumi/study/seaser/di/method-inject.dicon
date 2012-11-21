@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE components PUBLIC "-//SEASAR//DTD S2Container 2.3//EN"
+    "http://www.seasar.org/dtd/components23.dtd">
+<components>
+    <component name="domainLogicA" class="org.ahirugumi.study.seaser.di.DomainLogicA"/>
+    <component name="domainLogicB" class="org.ahirugumi.study.seaser.di.DomainLogicB"/>
+    <component class="org.ahirugumi.study.seaser.di.MethodInject">
+		<initMethod name="addDomain">
+			<arg>domainLogicA</arg>
+		</initMethod>
+		<initMethod name="addDomain">
+			<arg>domainLogicB</arg>
+		</initMethod>
+    </component>
+</components>
