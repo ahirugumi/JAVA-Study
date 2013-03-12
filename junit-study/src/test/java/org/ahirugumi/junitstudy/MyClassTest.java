@@ -4,14 +4,17 @@
  */
 package org.ahirugumi.junitstudy;
 
+import java.util.ArrayList;
+import java.util.List;
+import static org.hamcrest.CoreMatchers.*;
+import static org.junit.matchers.JUnitMatchers.*;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.assertThat;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Test;
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
 import org.junit.Ignore;
+import org.junit.Test;
 
 /**
  *
@@ -53,5 +56,31 @@ public class MyClassTest {
 	{
 		System.out.println("getNemeテスト");
 		assertThat(new MyClass().getName(),is("myclass"));
+	}
+	@Test
+	public void matcherのテスト()
+	{
+		//equalsか
+		assertThat("is",is("is"));
+		//not equalsか
+		assertThat("is not",is(not("is")));
+		//nullか
+		assertThat(null,is(nullValue()));
+		//not nullか
+		assertThat("not null",is(notNullValue()));
+		//同じインスタンスか
+		String foo=new String();
+		String bar=foo;
+		assertThat(foo,is(sameInstance(bar)));
+		//指定したインスタンスか
+		assertThat("instance",is(instanceOf(String.class)));
+
+		List<String> list = new ArrayList<String>();
+		list.add("aaa");
+		list.add("bbb");
+		list.add("ccc");
+		//リストに値が含まれているか
+		assertThat(list,hasItems("aaa","ccc"));
+		assertThat(list,hasItem("ccc"));
 	}
 }
