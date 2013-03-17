@@ -57,6 +57,16 @@ public class MyClassTest {
 		System.out.println("getNemeテスト");
 		assertThat(new MyClass().getName(),is("myclass"));
 	}
+	
+	@Test
+	public void CustomMatcherのテスト()
+	{
+		//lengthが同じだと成功
+		assertThat(new String("foo"),is(IsLength.lengthOf("aaa")));
+		//lengthが違うと失敗
+		assertThat(new String("foo"),is(IsLength.lengthOf("aa")));
+	}
+	
 	@Test
 	public void matcherのテスト()
 	{
