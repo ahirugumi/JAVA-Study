@@ -46,51 +46,47 @@ public class MyClassTest {
 	}
 
 	@Ignore
-	public void ignoreで除外するテスト()
-	{
+	public void ignoreで除外するテスト() {
 		System.out.println("ignore");
 	}
-	
+
 	@Test
-	public void getNameのテスト() 
-	{
+	public void getNameのテスト() {
 		System.out.println("getNemeテスト");
-		assertThat(new MyClass().getName(),is("myclass"));
+		assertThat(new MyClass().getName(), is("myclass"));
 	}
-	
+
 	@Test
-	public void CustomMatcherのテスト()
-	{
+	public void CustomMatcherのテスト() {
 		//lengthが同じだと成功
-		assertThat(new String("foo"),is(IsLength.lengthOf("aaa")));
+		assertThat(new String("foo"), is(IsLength.lengthOf("aaa")));
 		//lengthが違うと失敗
-		assertThat(new String("foo"),is(IsLength.lengthOf("aa")));
+		assertThat(new String("foo"), is(IsLength.lengthOf("aa")));
 	}
-	
+
 	@Test
-	public void matcherのテスト()
-	{
+	public void matcherのテスト() {
 		//equalsか
-		assertThat("is",is("is"));
+		assertThat("is", is("is"));
 		//not equalsか
-		assertThat("is not",is(not("is")));
+		assertThat("is not", is(not("is")));
 		//nullか
-		assertThat(null,is(nullValue()));
+		assertThat(null, is(nullValue()));
 		//not nullか
-		assertThat("not null",is(notNullValue()));
+		assertThat("not null", is(notNullValue()));
 		//同じインスタンスか
-		String foo=new String();
-		String bar=foo;
-		assertThat(foo,is(sameInstance(bar)));
+		String foo = new String();
+		String bar = foo;
+		assertThat(foo, is(sameInstance(bar)));
 		//指定したインスタンスか
-		assertThat("instance",is(instanceOf(String.class)));
+		assertThat("instance", is(instanceOf(String.class)));
 
 		List<String> list = new ArrayList<String>();
 		list.add("aaa");
 		list.add("bbb");
 		list.add("ccc");
 		//リストに値が含まれているか
-		assertThat(list,hasItems("aaa","ccc"));
-		assertThat(list,hasItem("ccc"));
+		assertThat(list, hasItems("aaa", "ccc"));
+		assertThat(list, hasItem("ccc"));
 	}
 }
