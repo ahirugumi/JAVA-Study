@@ -14,7 +14,9 @@ import static org.junit.Assert.assertThat;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 /**
  *
@@ -88,5 +90,18 @@ public class MyClassTest {
 		//リストに値が含まれているか
 		assertThat(list, hasItems("aaa", "ccc"));
 		assertThat(list, hasItem("ccc"));
+	}
+	
+	@Rule
+	public ExpectedException ex = ExpectedException.none();
+
+	@Test
+	public void ruleのテスト() {
+		//exceptionの型をチェック
+		ex.expect(NullPointerException.class);
+		//exceptionのメッセージをチェック
+		ex.expectMessage("nullpo");
+		//実際の呼び出し
+		(new MyClass()).throwsNullPointerException();
 	}
 }

@@ -39,4 +39,8 @@ public class MyClass {
 		}
 		return ret;
 	}
+	public void throwsNullPointerException()
+	{
+		throw new NullPointerException("nullpo");
+	}
 }
