@@ -1,0 +1,23 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_JP_AUTHOR	HIGASHI Hirohito	/Twitter: @h_east/
+!_TAG_PROGRAM_JP_URL	http://hp.vector.co.jp/authors/VA025040/	//
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.6b1J2	//
+IBaseLogic	IBaseLogic.java	/^public interface IBaseLogic {$/;"	i
+LogicLogging	LogicLogging.java	/^	public LogicLogging(IBaseLogic logic) {$/;"	m	class:LogicLogging
+LogicLogging	LogicLogging.java	/^public class LogicLogging implements InvocationHandler {$/;"	c
+MyLogic	MyLogic.java	/^public class MyLogic implements IBaseLogic {$/;"	c
+invoke	LogicLogging.java	/^	public Object invoke(Object o, Method method, Object[] os) throws Throwable {$/;"	m	class:LogicLogging
+logic	LogicLogging.java	/^	private IBaseLogic logic = null;$/;"	f	class:LogicLogging	file:
+method1	IBaseLogic.java	/^	String method1(String[] args);$/;"	m	interface:IBaseLogic
+method1	MyLogic.java	/^	public String method1(String[] args) {$/;"	m	class:MyLogic
+method2	IBaseLogic.java	/^	int method2(int arg);$/;"	m	interface:IBaseLogic
+method2	MyLogic.java	/^	public int method2(int arg) {$/;"	m	class:MyLogic
+method3	IBaseLogic.java	/^	Object method3();$/;"	m	interface:IBaseLogic
+method3	MyLogic.java	/^	public Object method3() {$/;"	m	class:MyLogic
+org.ahirugumi.study.loggingproxy	IBaseLogic.java	/^package org.ahirugumi.study.loggingproxy;$/;"	p
+org.ahirugumi.study.loggingproxy	LogicLogging.java	/^package org.ahirugumi.study.loggingproxy;$/;"	p
+org.ahirugumi.study.loggingproxy	MyLogic.java	/^package org.ahirugumi.study.loggingproxy;$/;"	p
